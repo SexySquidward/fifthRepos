@@ -1,0 +1,75 @@
+﻿<Window x:Class="BankingApp.Banking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Banking" Height="312.46" Width="724.6">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="savingsImage" UriSource="/BankingApp;component/Images/SavingsAccount.jpg" />
+            <BitmapImage x:Key="chequeImage" UriSource="/BankingApp;component/Images/ChequeAccount.jpg" />
+            <BitmapImage x:Key="investmentImage" UriSource="/BankingApp;component/Images/InvestmentAccount.jpg" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="0,0,-6.6,-1.8">
+        <Grid  HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="135" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="140" />
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="From Account:" Grid.Row="0">
+                <StackPanel Orientation="Vertical"   >
+                    <RadioButton Name="fromSavingsRadioButton" Content="Savings" Margin="10" IsChecked="True" Click="fromSavingsRadioButton_Click"/>
+                    <RadioButton Name="fromChequeRadioButton" Content="Cheque"  Margin="10" Click="fromChequeRadioButton_Click"/>
+                    <RadioButton Name="fromInvestmentRadioButton" Content="Investment" Margin="10"  Click="fromInvestmentRadioButton_Click" />
+                </StackPanel>
+            </GroupBox>
+            <Border Grid.Column="1" Grid.Row="0" Margin="10,10,10,0" BorderThickness="1" BorderBrush="LightGray">
+                <Image Name="fromImage" Source="/BankingApp;component/Images/SavingsAccount.jpg"   />
+            </Border>
+
+
+            <Label Name="fromBalanceLabel" Content="$4,346.37" Height="28" HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="1"  VerticalAlignment="Top" />
+            <Label Content="Balance:" Height="28" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" Width="134" HorizontalContentAlignment="Right" />
+
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Margin="389,27,0,0" VerticalAlignment="Top" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="135" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="140" />
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="To Account:" Grid.Row="0">
+                <StackPanel Orientation="Vertical"   >
+                    <RadioButton Name="toSavingsRadioButton" Content="Savings" Margin="10" Click="toSavingsRadioButton_Click" />
+                    <RadioButton Name="toChequeRadioButton" Content="Cheque"  Margin="10"  IsChecked="True" Click="toChequeRadioButton_Click" />
+                    <RadioButton Name="toInvestmentRadioButton" Content="Investment" Margin="10" Click="toInvestmentRadioButton_Click"  />
+                </StackPanel>
+            </GroupBox>
+            <Border Grid.Column="1" Grid.Row="0" Margin="10,10,10,0" BorderThickness="1" 
+                   BorderBrush="LightGray">
+                <Image Name="toImage" Source="/BankingApp;component/Images/ChequeAccount.jpg" Height="123" Margin="0.2,0.2,0.2,0" VerticalAlignment="Top" />
+
+            </Border>
+
+
+            <Label Name="toBalanceLabel" Content="$1,386.37" Height="28" HorizontalAlignment="Left"  Grid.Column="1" Grid.Row="1"  VerticalAlignment="Top" />
+            <Label Content="Balance:" Height="28" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" Width="134" HorizontalContentAlignment="Right" />
+
+        </Grid>
+
+        <TextBox Name="amountTextBox" Height="23" HorizontalAlignment="Left" Margin="138,205,0,0"  VerticalAlignment="Top" Width="71" />
+        <Button Name="transferButton" Content="Transfer" Height="23" HorizontalAlignment="Left" Margin="227,205,0,0"  VerticalAlignment="Top" Width="75" Click="transferButton_Click" />
+        <Image Height="55" HorizontalAlignment="Left" Margin="307,76,0,0" Stretch="Fill" VerticalAlignment="Top" Width="79" Source="/BankingApp;component/Images/Arrow.GIF" />
+        <Label Content="Amount to Transfer:" Height="28" HorizontalAlignment="Left" Margin="16,202,0,0" VerticalAlignment="Top" />
+        <Button Content="Exit" Height="23" HorizontalAlignment="Left" Margin="622,236,0,0" Name="exitButton" VerticalAlignment="Top" Width="75" Click="exitButton_Click" />
+        <Label Content="Bank Accounts Transfer System" HorizontalAlignment="Left" Height="27" Margin="131,0,0,0" VerticalAlignment="Top" Width="282" FontSize="14" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
