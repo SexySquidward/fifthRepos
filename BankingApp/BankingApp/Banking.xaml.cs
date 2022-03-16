@@ -52,7 +52,7 @@ namespace BankingApp
 
         private void transferButton_Click(object sender, RoutedEventArgs e)
         {
-// working out the transfer amount
+            // working out the transfer amount
 
             // validate transfer amount input
             try
@@ -86,7 +86,8 @@ namespace BankingApp
             }
             else
             // Handle insufficient fund
-                if (amountTransfer > fromBalance)
+                if (((fromRadioButtonChecked == "ChequeRadioButtonOn") && (amountTransfer + 2.0m > fromBalance)) || 
+                ((fromRadioButtonChecked == "SavingRadioButtonOn") && (amountTransfer > fromBalance)))
                 {
                     MessageBox.Show("Error! You have insufficient fund. Enter another amount");
                     Keyboard.Focus(amountTextBox);
